@@ -3,10 +3,10 @@ define(
     function (createBackGroundCanvas, pixelImageOnCanvas) {
         'use strict';
 
-        return function (config, targetElement) {
+        return function (config, targetElement, maybeCanvas) {
             const src = config.src || '';
             const pixelSize = Math.max(config.pixelSize || 5, 1);
-            const canvas = createBackGroundCanvas(targetElement);
+            const canvas = maybeCanvas || createBackGroundCanvas(targetElement);
             console.log(canvas);
             canvas.style.opacity = config.opacity || .5;
 
