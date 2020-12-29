@@ -5,9 +5,7 @@ $imageUrl = $block->getViewFileUrl('Safta_Module/images/electric.jpg');
 
 ?>
 <div data-bind="scope: 'my-component'">
-    <!-- ko pixelbg: '<?= $imageUrl ?>', pixelSize: pixelSize -->
-    Whops! Whops! Whops! Whops! Whops! Whops! Whops! Whops!
-    <!-- /ko -->
+    <!-- ko template: 'Safta_Module/example' --><!-- /ko -->
 </div>
 
 <script type="text/x-magento-init">
@@ -16,7 +14,8 @@ $imageUrl = $block->getViewFileUrl('Safta_Module/images/electric.jpg');
             "Magento_Ui/js/core/app": {
                 "components": {
                     "my-component": {
-                        "component": "Safta_Module/js/viewmodel"
+                        "component": "Safta_Module/js/viewmodel",
+                        "imageUrl": "<?= $imageUrl ?>"
                     }
                 }
             }

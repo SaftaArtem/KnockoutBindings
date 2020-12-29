@@ -1,4 +1,10 @@
-define(['ko', 'Safta_Module/js/plain/pixelbg'], function (ko, pixelBackground) {
+define(
+    [
+        'ko',
+        'Magento_Ui/js/lib/knockout/template/renderer',
+        'Safta_Module/js/plain/pixelbg'
+    ],
+    function (ko, renderer, pixelBackground) {
     'use strict';
 
     const TYPE_COMMENT = 8;
@@ -45,6 +51,9 @@ define(['ko', 'Safta_Module/js/plain/pixelbg'], function (ko, pixelBackground) {
     };
 
     ko.virtualElements.allowedBindings.pixelbg = true;
+
+    renderer.addNode('pixelbg');
+    renderer.addAttribute('pixelbg');
 
     return ko;
 });
